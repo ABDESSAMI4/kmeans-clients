@@ -1,0 +1,46 @@
+cluster,segment,variable,mean,median
+0,Petits acheteurs,Recency,48.085549132947975,48.0
+0,Petits acheteurs,Frequency,6.944508670520231,7.0
+0,Petits acheteurs,Monetary,69.75375722543353,54.0
+0,Petits acheteurs,Tenure,0.8289017341040462,1.0
+0,Petits acheteurs,Income,32430.573099415204,32146.0
+0,Petits acheteurs,NumDealsPurchases,1.853179190751445,2.0
+0,Petits acheteurs,NumWebPurchases,1.7884393063583814,2.0
+0,Petits acheteurs,NumCatalogPurchases,0.3976878612716763,0.0
+0,Petits acheteurs,NumStorePurchases,2.9052023121387283,3.0
+0,Petits acheteurs,MntWines,24.030057803468207,15.0
+0,Petits acheteurs,MntFruits,3.954913294797688,2.0
+0,Petits acheteurs,MntMeatProducts,19.2393063583815,12.0
+0,Petits acheteurs,MntFishProducts,5.502890173410405,3.0
+0,Petits acheteurs,MntSweetProducts,4.041618497109827,2.0
+0,Petits acheteurs,MntGoldProds,12.984971098265897,8.0
+1,Champions,Recency,23.694610778443113,24.0
+1,Champions,Frequency,20.068862275449103,20.0
+1,Champions,Monetary,943.1991017964071,879.5
+1,Champions,Tenure,0.9850299401197605,1.0
+1,Champions,Income,65883.90813253012,65338.0
+1,Champions,NumDealsPurchases,2.6137724550898205,2.0
+1,Champions,NumWebPurchases,5.669161676646707,5.0
+1,Champions,NumCatalogPurchases,4.061377245508982,3.5
+1,Champions,NumStorePurchases,7.724550898203593,7.0
+1,Champions,MntWines,476.2320359281437,407.5
+1,Champions,MntFruits,42.224550898203596,22.0
+1,Champions,MntMeatProducts,260.93263473053895,177.0
+1,Champions,MntFishProducts,58.93413173652694,34.0
+1,Champions,MntSweetProducts,41.01646706586826,23.0
+1,Champions,MntGoldProds,63.85928143712575,43.0
+2,À réactiver,Recency,74.37482319660538,74.0
+2,À réactiver,Frequency,19.62942008486563,19.0
+2,À réactiver,Monetary,942.8486562942009,914.0
+2,À réactiver,Tenure,1.1343705799151345,1.0
+2,À réactiver,Income,63565.07030129125,63841.0
+2,À réactiver,NumDealsPurchases,2.6294200848656293,2.0
+2,À réactiver,NumWebPurchases,5.397454031117397,5.0
+2,À réactiver,NumCatalogPurchases,4.11032531824611,4.0
+2,À réactiver,NumStorePurchases,7.492220650636492,7.0
+2,À réactiver,MntWines,483.6025459688826,410.0
+2,À réactiver,MntFruits,38.5997171145686,24.0
+2,À réactiver,MntMeatProducts,258.87270155586987,161.0
+2,À réactiver,MntFishProducts,56.47666195190948,33.0
+2,À réactiver,MntSweetProducts,42.04526166902404,25.0
+2,À réactiver,MntGoldProds,63.25176803394625,43.0

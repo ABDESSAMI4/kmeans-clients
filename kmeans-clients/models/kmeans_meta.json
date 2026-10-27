@@ -1,0 +1,50 @@
+{
+  "source": "Customer Personality Analysis (fichier fourni, attribution Kaggle à confirmer)",
+  "source_url": "https://www.kaggle.com/datasets/imakash3011/customer-personality-analysis",
+  "source_sha256": "31977bb98210bfa276d8d0289145df64aca377259f4a12e65709295a7b1976b1",
+  "k_optimal": 2,
+  "features": [
+    "Income",
+    "Recency",
+    "MntWines",
+    "MntFruits",
+    "MntMeatProducts",
+    "MntFishProducts",
+    "MntSweetProducts",
+    "MntGoldProds",
+    "NumDealsPurchases",
+    "NumWebPurchases",
+    "NumCatalogPurchases",
+    "NumStorePurchases",
+    "NumWebVisitsMonth"
+  ],
+  "log_features": [
+    "Income",
+    "MntWines",
+    "MntFruits",
+    "MntMeatProducts",
+    "MntFishProducts",
+    "MntSweetProducts",
+    "MntGoldProds"
+  ],
+  "seed": 42,
+  "stability_runs": 4,
+  "stability_threshold_ari": 0.8,
+  "n_clients": 2240,
+  "silhouette": 0.346106483948119,
+  "stabilite_ari": 0.9655019803938812,
+  "silhouette_sample_size": 1200,
+  "python_version": "3.13.16",
+  "pandas_version": "3.0.5",
+  "scikit_learn_version": "1.9.0",
+  "diagnostics": {
+    "lignes_initiales": 2240,
+    "colonnes_initiales": 29,
+    "doublons_exacts": 0,
+    "ids_dupliques": 0,
+    "valeurs_manquantes": {
+      "Income": 24
+    },
+    "annees_naissance_incoherentes": 3
+  }
+}

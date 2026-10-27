@@ -1,0 +1,230 @@
+{
+  "model_name": "RFM KMeans v2",
+  "source": "Customer Personality Analysis (attribution à confirmer)",
+  "source_url": "https://www.kaggle.com/datasets/imakash3011/customer-personality-analysis",
+  "source_sha256": "31977bb98210bfa276d8d0289145df64aca377259f4a12e65709295a7b1976b1",
+  "n_clients": 2240,
+  "n_features": 5,
+  "features": [
+    "Recency",
+    "Frequency",
+    "Monetary",
+    "Tenure",
+    "Income"
+  ],
+  "raw_columns": [
+    "Income",
+    "Recency",
+    "NumDealsPurchases",
+    "NumWebPurchases",
+    "NumCatalogPurchases",
+    "NumStorePurchases",
+    "MntWines",
+    "MntFruits",
+    "MntMeatProducts",
+    "MntFishProducts",
+    "MntSweetProducts",
+    "MntGoldProds",
+    "Dt_Customer"
+  ],
+  "frequency_definition": "NumDealsPurchases + NumWebPurchases + NumCatalogPurchases + NumStorePurchases",
+  "monetary_definition": "sum of six Mnt* purchase amount columns",
+  "tenure_definition": "2014 - year(Dt_Customer); reference year assumed",
+  "log_features": [
+    "Frequency",
+    "Monetary",
+    "Income"
+  ],
+  "cap_quantile": 0.99,
+  "k": 3,
+  "seed": 42,
+  "business_labels": {
+    "1": "Champions",
+    "2": "À réactiver",
+    "0": "Petits acheteurs"
+  },
+  "recommendations": {
+    "1": {
+      "segment": "Champions",
+      "action": "Fidéliser et développer la valeur à long terme sans sur-solliciter.",
+      "canal": "magasin",
+      "offre": "Accès anticipé, service premium ou bundle complémentaire à marge maîtrisée.",
+      "kpi_attendu": "Faire progresser le réachat et la marge nette versus un groupe témoin, sans hausse des désabonnements.",
+      "kpi_a_suivre": "Taux de réachat, marge par client contacté et désabonnements.",
+      "precaution": "Hypothèse d'action à tester; une association descriptive ne prouve pas un uplift causal."
+    },
+    "2": {
+      "segment": "À réactiver",
+      "action": "Lancer une relance win-back avec fréquence limitée et groupe témoin.",
+      "canal": "magasin",
+      "offre": "Offre de réactivation à durée courte, avec seuil de panier et coût plafonné.",
+      "kpi_attendu": "Obtenir une réactivation incrémentale et une marge nette positive versus le groupe témoin.",
+      "kpi_a_suivre": "Réactivation incrémentale, marge nette, coût par client réactivé et plaintes.",
+      "precaution": "Hypothèse d'action à tester; une association descriptive ne prouve pas un uplift causal."
+    },
+    "0": {
+      "segment": "Petits acheteurs",
+      "action": "Développer la fréquence par recommandations de produits complémentaires.",
+      "canal": "magasin",
+      "offre": "Bundle personnalisé ou livraison offerte à partir d’un seuil pertinent.",
+      "kpi_attendu": "Augmenter fréquence et panier net à 90 jours versus le baseline du segment.",
+      "kpi_a_suivre": "Conversion, fréquence à 90 jours, panier moyen et marge nette.",
+      "precaution": "Hypothèse d'action à tester; une association descriptive ne prouve pas un uplift causal."
+    }
+  },
+  "k_metrics": [
+    {
+      "k": 2,
+      "inertie": 6542.4973080127,
+      "silhouette": 0.38388064854008813,
+      "davies_bouldin": 1.1065986274008603,
+      "calinski_harabasz": 1593.2008233762472
+    },
+    {
+      "k": 3,
+      "inertie": 5509.344150412024,
+      "silhouette": 0.2793373737804883,
+      "davies_bouldin": 1.2938633039597476,
+      "calinski_harabasz": 1155.3109404181475
+    },
+    {
+      "k": 4,
+      "inertie": 4828.958795254435,
+      "silhouette": 0.24634821675176952,
+      "davies_bouldin": 1.4922380208576476,
+      "calinski_harabasz": 983.3484979419512
+    },
+    {
+      "k": 5,
+      "inertie": 4220.177662244435,
+      "silhouette": 0.25817132843237384,
+      "davies_bouldin": 1.4043949731448588,
+      "calinski_harabasz": 924.1305697314516
+    },
+    {
+      "k": 6,
+      "inertie": 3769.3016274917136,
+      "silhouette": 0.2569903468535817,
+      "davies_bouldin": 1.3182129188725327,
+      "calinski_harabasz": 880.8093278133409
+    },
+    {
+      "k": 7,
+      "inertie": 3459.5136442452554,
+      "silhouette": 0.2563748809197687,
+      "davies_bouldin": 1.2516863184484919,
+      "calinski_harabasz": 832.7040450301615
+    },
+    {
+      "k": 8,
+      "inertie": 3187.2754658496,
+      "silhouette": 0.2645715247787562,
+      "davies_bouldin": 1.2035105682787899,
+      "calinski_harabasz": 801.5982549470319
+    },
+    {
+      "k": 9,
+      "inertie": 2970.561507990428,
+      "silhouette": 0.26882545486038895,
+      "davies_bouldin": 1.2067915452577973,
+      "calinski_harabasz": 772.576044389573
+    }
+  ],
+  "benchmark": [
+    {
+      "modele": "KMeans sans log1p",
+      "pretraitement": "RFM standardisé sans log1p",
+      "n_clusters": 3,
+      "noise_fraction": 0.0,
+      "silhouette": 0.2725548202396661,
+      "davies_bouldin": 1.3592128704546314,
+      "calinski_harabasz": 1069.2476619942815,
+      "status": "ok"
+    },
+    {
+      "modele": "KMeans avec log1p",
+      "pretraitement": "RFM avec log1p + standardisation",
+      "n_clusters": 3,
+      "noise_fraction": 0.0,
+      "silhouette": 0.2793373737804883,
+      "davies_bouldin": 1.2938633039597476,
+      "calinski_harabasz": 1155.3109404181475,
+      "status": "ok"
+    },
+    {
+      "modele": "GaussianMixture",
+      "pretraitement": "RFM avec log1p + standardisation",
+      "n_clusters": 3,
+      "noise_fraction": 0.0,
+      "silhouette": 0.2866818488525324,
+      "davies_bouldin": 1.6485572138422295,
+      "calinski_harabasz": 709.1915125543939,
+      "status": "ok"
+    },
+    {
+      "modele": "Agglomerative Ward",
+      "pretraitement": "RFM avec log1p + standardisation",
+      "n_clusters": 3,
+      "noise_fraction": 0.0,
+      "silhouette": 0.2211147979862054,
+      "davies_bouldin": 1.512431319449982,
+      "calinski_harabasz": 960.0500913145456,
+      "status": "ok"
+    },
+    {
+      "modele": "HDBSCAN",
+      "pretraitement": "RFM avec log1p + standardisation",
+      "n_clusters": 3,
+      "noise_fraction": 0.014732142857142857,
+      "silhouette": 0.1499767054092448,
+      "davies_bouldin": 2.406386311519641,
+      "calinski_harabasz": 319.23919567405034,
+      "status": "ok"
+    }
+  ],
+  "stability_seeds": [
+    42,
+    1,
+    123,
+    2024,
+    999
+  ],
+  "bootstrap_runs": 10,
+  "bootstrap_fraction": 0.8,
+  "stability_summary": {
+    "2": 0.9827818514882875,
+    "3": 0.9496980838488344,
+    "4": 0.7623778214798216,
+    "5": 0.7229307030247233,
+    "6": 0.698084223939373,
+    "7": 0.7606381905662264,
+    "8": 0.7774417971683502,
+    "9": 0.7229424958155063
+  },
+  "stability_summary_std": {
+    "2": 0.008592939163097951,
+    "3": 0.023578769022159513,
+    "4": 0.14984601698102573,
+    "5": 0.17491877017132662,
+    "6": 0.17727664408763844,
+    "7": 0.14434594388778665,
+    "8": 0.12468989636793183,
+    "9": 0.10018003766577002
+  },
+  "diagnostics": {
+    "lignes_initiales": 2240,
+    "colonnes_initiales": 29,
+    "doublons_exacts": 0,
+    "ids_dupliques": 0,
+    "valeurs_manquantes_income": 24,
+    "dates_client_invalides": 0
+  },
+  "versions": {
+    "python": "3.13.16",
+    "pandas": "3.0.5",
+    "numpy": "2.5.1",
+    "scikit_learn": "1.9.0"
+  },
+  "response_usage": "Descriptive post-clustering analysis only; never used in model fit.",
+  "uplift_warning": "Scenario simulation only; not a causal uplift estimate."
+}

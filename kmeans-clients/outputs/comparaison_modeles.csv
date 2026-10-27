@@ -1,0 +1,6 @@
+modele,pretraitement,n_clusters,noise_fraction,silhouette,davies_bouldin,calinski_harabasz,status
+KMeans sans log1p,RFM standardisé sans log1p,3,0.0,0.2725548202396661,1.3592128704546314,1069.2476619942815,ok
+KMeans avec log1p,RFM avec log1p + standardisation,3,0.0,0.2793373737804883,1.2938633039597476,1155.3109404181475,ok
+GaussianMixture,RFM avec log1p + standardisation,3,0.0,0.2866818488525324,1.6485572138422295,709.1915125543939,ok
+Agglomerative Ward,RFM avec log1p + standardisation,3,0.0,0.2211147979862054,1.512431319449982,960.0500913145456,ok
+HDBSCAN,RFM avec log1p + standardisation,3,0.014732142857142857,0.1499767054092448,2.406386311519641,319.23919567405034,ok
